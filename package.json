@@ -1,0 +1,47 @@
+{
+  "name": "anylogger-log4js",
+  "version": "0.1.0",
+  "description": "Anylogger adapter for log4js",
+  "main": "anylogger-log4js.js",
+  "files": [
+    "anylogger-log4js.js",
+    "anylogger-log4js.spec.js",
+    "index.html"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production node build.js",
+    "prepare": "npm run test && npm run build",
+    "test": "mocha anylogger-log4js.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/download/anylogger-log4js.git"
+  },
+  "keywords": [
+    "anylogger",
+    "log4js",
+    "anylogger-log4js",
+    "log"
+  ],
+  "author": "Stijn de Witt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/download/anylogger-log4js/issues"
+  },
+  "homepage": "https://github.com/download/anylogger-log4js#readme",
+  "dependencies": {},
+  "peerDependencies": {
+    "anylogger": ">=0.20.0",
+    "log4js": "^6.1.0"
+  },
+  "devDependencies": {
+    "anylogger": "^0.21.0",
+    "chai": "^4.2.0",
+    "cross-env": "^6.0.3",
+    "gzip-size": "^5.1.1",
+    "log4js": "^6.1.0",
+    "mocha": "^7.0.0",
+    "sinon": "^8.0.4",
+    "uglify-js": "^3.7.3"
+  }
+}
