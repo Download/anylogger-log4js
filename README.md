@@ -1,4 +1,4 @@
-# anylogger-log4js <sub><sup>0.2.0</sup></sub>
+# anylogger-log4js <sub><sup>0.1.0</sup></sub>
 ### Anylogger adapter for log4js
 
 [![npm](https://img.shields.io/npm/v/anylogger-log4js.svg)](https://npmjs.com/package/anylogger-log4js)
