@@ -1,17 +1,35 @@
 {
   "name": "anylogger-log4js",
-  "version": "0.2.0",
+  "version": "1.1.0-beta.1",
   "description": "Anylogger adapter for log4js",
+  "type": "module",
+  "exports": {
+    "import": "./anylogger-log4js.js",
+    "require": "./anylogger-log4js.cjs"
+  },
+  "src": "anylogger-log4js.ts",
   "main": "anylogger-log4js.js",
+  "cjs": "anylogger-log4js.cjs",
+  "iife": "anylogger-log4js.iife.js",
+  "min": "anylogger-log4js.min.js",
+  "types": "anylogger-log4js.d.ts",
   "files": [
+    "anylogger-log4js.cjs",
+    "anylogger-log4js.d.ts",
+    "anylogger-log4js.d.ts.map",
     "anylogger-log4js.js",
+    "anylogger-log4js.js.map",
     "anylogger-log4js.spec.js",
-    "index.html"
+    "anylogger-log4js.ts"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production node build.js",
+    "build": "tsc && npm run test && npm run minify && npm run docs",
+    "clean": "rimraf anylogger-log4js.cjs anylogger-log4js.d.ts anylogger-log4js.d.ts.map anylogger-log4js.iife.js anylogger-log4js.js anylogger-log4js.js.map anylogger-log4js.min.js",
+    "docs": "cross-env NODE_ENV=production node build.js docs",
+    "minify": "cross-env NODE_ENV=production node build.js minify",
+    "package": "cross-env NODE_ENV=production rollup -c",
     "prepare": "npm run test && npm run build",
-    "test": "mocha anylogger-log4js.spec.js"
+    "test": "npm run package && mocha anylogger-log4js.spec.js"
   },
   "repository": {
     "type": "git",
@@ -29,19 +47,22 @@
     "url": "https://github.com/download/anylogger-log4js/issues"
   },
   "homepage": "https://github.com/download/anylogger-log4js#readme",
-  "dependencies": {},
   "peerDependencies": {
-    "anylogger": ">=0.20.0",
-    "log4js": "^6.1.0"
+    "anylogger": "1.x || >=1.1.0-beta || >=1.2.0-beta || >=1.3.0-beta || >=1.4.0-beta || >=1.5.0-beta || >=1.6.0-beta || >=1.7.0-beta || >=1.8.0-beta || >=1.9.0-beta",
+    "log4js": "6.x"
   },
   "devDependencies": {
-    "anylogger": "^0.21.0",
-    "chai": "^4.2.0",
-    "cross-env": "^6.0.3",
-    "gzip-size": "^5.1.1",
-    "log4js": "^6.1.0",
-    "mocha": "^7.0.0",
-    "sinon": "^8.0.4",
-    "uglify-js": "^3.7.4"
+    "anylogger": "^1.1.0-beta.0",
+    "chai": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "gzip-size": "^7.0.0",
+    "log4js": "^6.9.1",
+    "mocha": "^10.3.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.12.0",
+    "rollup-plugin-re": "^1.0.7",
+    "sinon": "^17.0.1",
+    "typescript": "^5.3.3",
+    "uglify-js": "^3.17.4"
   }
 }

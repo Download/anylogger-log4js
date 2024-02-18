@@ -1,10 +1,8 @@
-# anylogger-log4js <sub><sup>0.2.0</sup></sub>
+# anylogger-log4js <sub><sup>1.1.0-beta.1</sup></sub>
 ### Anylogger adapter for log4js
 
 [![npm](https://img.shields.io/npm/v/anylogger-log4js.svg)](https://npmjs.com/package/anylogger-log4js)
 [![license](https://img.shields.io/npm/l/anylogger-log4js.svg)](https://opensource.org/licenses/MIT)
-[![travis](https://img.shields.io/travis/Download/anylogger-log4js.svg)](https://travis-ci.org/Download/anylogger-log4js)
-[![greenkeeper](https://badges.greenkeeper.io/Download/anylogger-log4js.svg)](https://greenkeeper.io/)
 ![mind BLOWN](https://img.shields.io/badge/mind-BLOWN-ff69b4.svg)
 
 <sup><sub><sup><sub>.</sub></sup></sub></sup>
@@ -26,19 +24,12 @@ npm install --save anylogger-log4js anylogger log4js
 ## Include in your application project
 This package is meant for application projects. If you are writing a library to be NPM installed into some other project, most likely you should not include any adapter, but instead just use `anylogger` directly.
 
-The `anylogger-log4js` adapter will modify the `anylogger` factory in such a way that the loggers it creates will be logging to `log4js`. 
+The `anylogger-log4js` adapter will modify the `anylogger` factory in such a way that the loggers it creates will be logging to `log4js`.
 
-> When using `log4js`, all logging except for warnings and errors is supressed by default. 
+> When using `log4js`, all logging except for warnings and errors is supressed by default.
 As such, you should make sure to set the log level to INFO or DEBUG [as usual](https://www.npmjs.com/package/log4js#documentation) before expecting to see any output.
 
 To activate the adapter, include it in your application entry point.
-
-### Require
-
-*main.js*
-```js
-require('anylogger-log4js')
-```
 
 ### Import
 
@@ -47,13 +38,20 @@ require('anylogger-log4js')
 import 'anylogger-log4js'
 ```
 
+### Require
+
+*main.js*
+```js
+require('anylogger-log4js')
+```
+
 ## Logging in the application project
 In your application module code, only use anylogger to stay framework independent:
 
 *my-module.js*
 ```js
 import anylogger from 'anylogger'
-const log = anylogger('my-module')
+const log = anylogger('my:module')
 log('Logging is simple!')
 ```
 
@@ -71,20 +69,20 @@ use it directly:
 ```js
 // ...
 import log4js from 'log4js'
-log4js.getLogger('my-module').level = 'info'
+log4js.getLogger('my:module').level = 'info'
 // ...
 ```
 
 ## Issues
 
-Add an issue in this project's 
-[issue tracker](https://github.com/download/anylogger-log4js/issues) 
+Add an issue in this project's
+[issue tracker](https://github.com/download/anylogger-log4js/issues)
 to let me know of any problems you find, or questions you may have.
 
 
 ## Copyright
 
-© 2020 by [Stijn de Witt](https://stijndewitt.com). Some rights reserved.
+© 2024 by [Stijn de Witt](https://stijndewitt.com). Some rights reserved.
 
 
 ## License

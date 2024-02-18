@@ -1,8 +1,8 @@
-var expect = require('chai').expect
-var sinon = require('sinon')
-var adapter = require('./')
-var anylogger = require('anylogger')
-var log4js = require('log4js')
+import { expect } from 'chai'
+import sinon from 'sinon'
+import 'anylogger-log4js'
+import anylogger from 'anylogger'
+import log4js from 'log4js'
 
 var sandbox = sinon.createSandbox();
 
@@ -15,9 +15,9 @@ describe('anylogger([name, [options]]) => log', function() {
 
   afterEach(function(){
     // clear any loggers that were created
-    Object.keys(anylogger()).forEach(function(key){
-      delete anylogger()[key]
-    })
+    for (const name in anylogger.all) {
+      delete anylogger.all[name]
+    }
     // restore original console methods
     sandbox.restore()
   })
@@ -25,16 +25,6 @@ describe('anylogger([name, [options]]) => log', function() {
 
   it('is a function', function(){
     expect(anylogger).to.be.a('function')
-  })
-
-  it('returns an object mapping names to loggers when called without arguments', function(){
-    var result = anylogger()
-    expect(result).to.be.an('object')
-    expect(Object.keys(result)).to.deep.eq([])
-    anylogger('test')
-    result = anylogger()
-    expect(result).to.be.an('object')
-    expect(Object.keys(result)).to.deep.eq(['test'])
   })
 
   it('returns a named logger when called with a name', function(){
