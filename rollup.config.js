@@ -14,24 +14,8 @@ export default [
 		input: pkg.main,
 		output: [
       // browser-friendly build
-			{ file: pkg.iife,  format: 'iife', strict: false, globals: { anylogger: 'anylogger', debug: 'debug' } },
+			{ file: pkg.iife, name: 'adapter', format: 'iife', strict: false, globals: { anylogger: 'anylogger', debug: 'debug' } },
 		],
 		external: [ 'anylogger', 'log4js' ],
-		plugins: [
-			// remove import bloat from iife bundle
-			replace({
-				patterns: [
-					{
-						match: /anylogger-log4js/,
-						test: 'import anylogger from \'anylogger\'',
-						replace: '',
-					}, {
-						match: /anylogger-log4js/,
-						test: 'import log4js from \'log4js\'',
-						replace: '',
-					},
-				]
-			})
-		],
 	},
 ];
