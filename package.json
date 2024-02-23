@@ -1,6 +1,6 @@
 {
   "name": "anylogger-log4js",
-  "version": "1.1.0-beta.1",
+  "version": "1.1.0-beta.2",
   "description": "Anylogger adapter for log4js",
   "type": "module",
   "exports": {
@@ -52,7 +52,7 @@
     "log4js": "6.x"
   },
   "devDependencies": {
-    "anylogger": "^1.1.0-beta.0",
+    "anylogger": "^1.1.0-beta.3",
     "chai": "^5.1.0",
     "cross-env": "^7.0.3",
     "gzip-size": "^7.0.0",

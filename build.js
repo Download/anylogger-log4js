@@ -3,11 +3,12 @@ import UglifyJS from 'uglify-js'
 import { gzipSizeSync } from 'gzip-size'
 
 // be cool and use anylogger-log4js to print the logging in the build of anylogger-log4js :)
-import 'anylogger-log4js';
+import adapter from 'anylogger-log4js';
 import anylogger from 'anylogger'
 import log4js from "log4js";
+adapter(anylogger)
 const log = anylogger('anylogger-log4js')
-log4js.getLogger('anylogger-log4js').level = 'debug'
+log4js.getLogger('anylogger-log4js').level = 'info'
 
 var [ processName, script, command, ...args ] = process.argv
 var pkg = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))

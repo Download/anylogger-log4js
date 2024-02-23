@@ -1,4 +1,4 @@
-# anylogger-log4js <sub><sup>1.1.0-beta.1</sup></sub>
+# anylogger-log4js <sub><sup>1.1.0-beta.2</sup></sub>
 ### Anylogger adapter for log4js
 
 [![npm](https://img.shields.io/npm/v/anylogger-log4js.svg)](https://npmjs.com/package/anylogger-log4js)
@@ -35,14 +35,18 @@ To activate the adapter, include it in your application entry point.
 
 *main.js*
 ```js
-import 'anylogger-log4js'
+import adapter from 'anylogger-log4js'
+import anylogger from 'anylogger'
+adapter(anylogger)
 ```
 
 ### Require
 
 *main.js*
 ```js
-require('anylogger-log4js')
+const adapter = require('anylogger-log4js')
+const anylogger = require('anylogger')
+adapter(anylogger)
 ```
 
 ## Logging in the application project
