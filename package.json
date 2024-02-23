@@ -19,6 +19,7 @@
     "anylogger-log4js.d.ts.map",
     "anylogger-log4js.js",
     "anylogger-log4js.js.map",
+    "anylogger-log4js.min.js",
     "anylogger-log4js.spec.js",
     "anylogger-log4js.ts"
   ],
