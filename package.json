@@ -1,11 +1,13 @@
 {
   "name": "anylogger-log4js",
-  "version": "1.1.0-beta.2",
+  "version": "1.1.0-beta.3",
   "description": "Anylogger adapter for log4js",
   "type": "module",
   "exports": {
-    "import": "./anylogger-log4js.js",
-    "require": "./anylogger-log4js.cjs"
+    ".": {
+      "import": "./anylogger-log4js.js",
+      "require": "./anylogger-log4js.cjs"
+    }
   },
   "src": "anylogger-log4js.ts",
   "main": "anylogger-log4js.js",
@@ -21,10 +23,11 @@
     "anylogger-log4js.js.map",
     "anylogger-log4js.min.js",
     "anylogger-log4js.spec.js",
-    "anylogger-log4js.ts"
+    "anylogger-log4js.ts",
+    "tsconfig.json"
   ],
   "scripts": {
-    "build": "tsc && npm run test && npm run minify && npm run docs",
+    "build": "tsc && npm run test && npm run minify -s && npm run docs -s",
     "clean": "rimraf anylogger-log4js.cjs anylogger-log4js.d.ts anylogger-log4js.d.ts.map anylogger-log4js.iife.js anylogger-log4js.js anylogger-log4js.js.map anylogger-log4js.min.js",
     "docs": "cross-env NODE_ENV=production node build.js docs",
     "minify": "cross-env NODE_ENV=production node build.js minify",
@@ -53,7 +56,7 @@
     "log4js": "6.x"
   },
   "devDependencies": {
-    "anylogger": "^1.1.0-beta.3",
+    "anylogger": "^1.1.0-beta.4",
     "chai": "^5.1.0",
     "cross-env": "^7.0.3",
     "gzip-size": "^7.0.0",
@@ -61,7 +64,6 @@
     "mocha": "^10.3.0",
     "rimraf": "^5.0.5",
     "rollup": "^4.12.0",
-    "rollup-plugin-re": "^1.0.7",
     "sinon": "^17.0.1",
     "typescript": "^5.3.3",
     "uglify-js": "^3.17.4"

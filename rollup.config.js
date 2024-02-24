@@ -1,4 +1,3 @@
-import replace from 'rollup-plugin-re'
 import pkg from './package.json' assert { type: "json" }
 
 export default [
@@ -14,7 +13,7 @@ export default [
 		input: pkg.main,
 		output: [
       // browser-friendly build
-			{ file: pkg.iife, name: 'adapter', format: 'iife', strict: false, globals: { anylogger: 'anylogger', debug: 'debug' } },
+			{ file: pkg.iife, name: 'adapter', format: 'iife', strict: false, globals: { anylogger: 'anylogger', log4js: 'log4js' } },
 		],
 		external: [ 'anylogger', 'log4js' ],
 	},
